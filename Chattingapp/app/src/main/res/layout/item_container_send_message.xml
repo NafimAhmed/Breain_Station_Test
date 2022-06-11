@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/_4sdp">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textmessage"
+        android:padding="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="wrap"
+        app:layout_constraintWidth_percent="0.8"
+        android:background="@drawable/background_send_message"
+        android:backgroundTint="@color/purple_700"
+        ></TextView>
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textdateandtime"
+        android:textSize="@dimen/_8ssp"
+        android:layout_marginTop="@dimen/_4sdp"
+        app:layout_constraintStart_toEndOf="@id/textmessage"
+        app:layout_constraintTop_toBottomOf="@id/textmessage"
+        android:textColor="#CA0707"
+
+        android:background="@drawable/background_received_message"
+
+        ></TextView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
