@@ -51,7 +51,7 @@ import java.util.Locale;
 public class Chat_Activity extends AppCompatActivity {
 
     private User receiverUser;
-    TextView textname,translate;
+    TextView textname;
     ImageView imageback;
     EditText input_message;//,translate;
     ProgressBar progressbar;
@@ -107,7 +107,7 @@ public class Chat_Activity extends AppCompatActivity {
         
         textname=findViewById(R.id.textname);
         progressbar=findViewById(R.id.progressbar);
-        translate=findViewById(R.id.translate);
+
 
         imageback=findViewById(R.id.imageback);
 
@@ -167,20 +167,22 @@ public class Chat_Activity extends AppCompatActivity {
 
     }
 
-    private void sendMessage()
+    private void sendMessage(String text)
     {
-        String messageText=input_message.getText().toString();
+        //String messageText=input_message.getText().toString();
 
         ///////////////////////////////////////////////////////////////
 
         //translate.setText(null);
 
-        prepareModel(messageText);
+        //prepareModel(messageText);
 
-       // takeSpeak(messageText);
-        String mess=translate.getText().toString();
+       // takeSpeak(text);
+       // String mess=translate.getText().toString();
 
 
+        //String mess=prepareModel(messageText);
+        //translate.setText(null);
 
 
         ////////////////////////////////////////////////////////////
@@ -191,7 +193,7 @@ public class Chat_Activity extends AppCompatActivity {
         HashMap<String,Object> message=new HashMap<>();
         message.put(Constrant.KEY_SENDER_ID,preferenceManager.getString(Constrant.KEY_USER_ID));
         message.put(Constrant.KEY_RECEIVER_ID,receiverUser.id);
-        message.put(Constrant.KEY_MESSAGE,mess/*ageTextinput_message.getText().toString()*/);
+        message.put(Constrant.KEY_MESSAGE,text/*messageTextinput_message.getText().toString()*/);
         String dateTime=null;
 
         message.put(Constrant.KEY_TIMESTAMP,dateTime);
@@ -213,7 +215,11 @@ public class Chat_Activity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                sendMessage();
+
+                String messageText=input_message.getText().toString();
+                prepareModel(messageText);
+
+                //sendMessage();
             }
         });
 
@@ -291,7 +297,7 @@ public class Chat_Activity extends AppCompatActivity {
 
         /////////////////////////////////////////
 
-        translate.setText(null);
+       // translate.setText(null);
 
 
         ///////////////////////////////////
@@ -337,7 +343,7 @@ public class Chat_Activity extends AppCompatActivity {
                                 // Model downloaded successfully. Okay to start translating.
                                 // (Set a flag, unhide the translation UI, etc.)
 
-                               result[0] = translateLanguage(inputlanguage);
+                                translateLanguage(inputlanguage);
                             }
                         })
                 .addOnFailureListener(
@@ -351,7 +357,13 @@ public class Chat_Activity extends AppCompatActivity {
                             }
                         });
 
-        return result[0];
+
+       // translate.setText(null);
+       // translate.setText(null);
+        //translate.setText(null);
+
+
+        return inputlanguage;
 
 
     }
@@ -368,9 +380,11 @@ public class Chat_Activity extends AppCompatActivity {
                                 // Translation successful.
 
                                 //textView.setText(translatedText);
-                                result[0] =translatedText;
+                               // result[0] =translatedText;
 
-                                translate.setText(translatedText);
+                                //translate.setText(translatedText);
+
+                                sendMessage(translatedText);
 
                             }
                         })
@@ -385,7 +399,9 @@ public class Chat_Activity extends AppCompatActivity {
                             }
                         });
 
-        return result[0];
+
+
+        return text;
 
     }
 
@@ -394,8 +410,16 @@ public class Chat_Activity extends AppCompatActivity {
 
     //////////////////////////////////////////////////////////////
 
+    public void rec(View view)
+    {
+        record();
+    }
 
-    public void record(View view)
+
+    /////////////////////////////////////////////////////
+
+
+    public void record()
     {
        // Toast.makeText(getApplicationContext(),"Clicked",Toast.LENGTH_LONG).show();
 
@@ -435,11 +459,16 @@ public class Chat_Activity extends AppCompatActivity {
                     input_message.setText(result.get(0));
                     ///////////////////////////////////////////
 
-                    sendMessage();
+                    //sendMessage();
+
+                    prepareModel(result.get(0));
+
 
                     //////////////////////////////////////////
 
                    // translate();
+
+                    record();
 
 
 
@@ -449,6 +478,8 @@ public class Chat_Activity extends AppCompatActivity {
 
 
     }
+
+
 
 
     /////////////////////////////////////////////

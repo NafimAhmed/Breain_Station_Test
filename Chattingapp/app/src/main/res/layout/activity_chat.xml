@@ -42,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:clickable="true"
-        android:onClick="record"
+        android:onClick="rec"
         ></androidx.appcompat.widget.AppCompatImageView>
     
     <TextView
@@ -133,22 +133,6 @@
 
     </EditText>
 
-    <TextView
-        android:id="@+id/translate"
-        android:layout_width="3dp"
-        android:layout_height="6dp"
-        android:visibility="invisible"
-        android:layout_margin="@dimen/_16sdp"
-        android:background="@drawable/background_chat_input"
-
-        android:hint="Type a message"
-        android:padding="@dimen/_16sdp"
-        android:textColor="#17E30A"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </TextView>
 
 
 
