@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CallingActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/callLayout"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Someone is calling"
+            android:id="@+id/incomingCallingText"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            android:gravity="center"
+            android:textSize="25dp"
+            ></TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_call_24"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            android:gravity="center"
+
+            android:id="@+id/acceptBtn"
+
+            ></ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_call_end_24"
+            android:id="@+id/rejectBtn"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            android:gravity="center"
+
+
+            ></ImageView>
+
+
+
+    </LinearLayout>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:id="@+id/webView"
+        ></WebView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/inputLayout"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/friendNameEdit"
+            android:hint="whome you want to call"
+            ></EditText>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Call"
+            android:layout_gravity="right"
+            android:id="@+id/callBtn"
+
+            ></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:id="@+id/callControlLayout"
+        >
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_videocam_24"
+            android:id="@+id/toggleVideoBtn"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            android:gravity="center"
+
+
+            ></ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_mic_24"
+            android:id="@+id/toggleAudioBtn"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            android:gravity="center"
+
+
+            ></ImageView>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
