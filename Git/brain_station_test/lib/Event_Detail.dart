@@ -98,7 +98,15 @@ class _Event_DetailState extends State<Event_Detail>//StatelessWidget
     // TODO: implement build
     return MaterialApp(
       home: Scaffold(
-        body: SingleChildScrollView(
+
+          appBar: AppBar(
+
+            title: Text("Repository Detail"),
+
+          ),
+
+
+          body: SingleChildScrollView(
         child:Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

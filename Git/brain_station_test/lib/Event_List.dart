@@ -67,7 +67,11 @@ Map <String,dynamic>? sharedPreferenceMap;
     return MaterialApp(
       home: Scaffold(
 
-        appBar: AppBar(),
+        appBar: AppBar(
+
+          title: Text("List of Repository"),
+
+        ),
 
           body: Card(
             child:
