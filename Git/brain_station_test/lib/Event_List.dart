@@ -69,7 +69,23 @@ Map <String,dynamic>? sharedPreferenceMap;
 
         appBar: AppBar(
 
-          title: Text("List of Repository"),
+          title: Row(
+            children: [
+              Text("List of Repository"),
+              ElevatedButton(onPressed: (){
+
+                //list = jsonDecode(response.body);
+                // list=list?..sort((a,b)=>a['id'].compareTo(b['id']));    [index]['created_at'].toString()
+
+                setState((){
+                  list=list?..sort((a,b)=>a['created_at'].compareTo(b['created_at']));
+
+                });
+
+
+              }, child: Text("Sort"))
+            ],
+          )
 
         ),
 
